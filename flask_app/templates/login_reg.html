@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+
+    <h4>Recipe Share</h4>
+    <hr>
+    <div class="main">
+        <form action="/register" method="post">
+            {% with messages = get_flashed_messages(category_filter=["registration"]) %}<!-- declare a variable called messages -->
+                {% if messages %}<!-- check if there are any messages -->
+                    {% for message in messages %}<!-- loop through the messages -->
+                            <p>{{message}}</p><!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+    <div class="register">
+        <h2>register</h2>
+
+    <div>
+        <label>First Name:</label> <br>
+        <input type="text" name="first_name" id="first_name">
+    </div> <br>
+
+    <div>
+        <label>Last Name:</label> <br>
+        <input type="text" name="last_name" id="last_name">
+    </div>
+    <br>
+
+    <div>
+        <label>email:</label> <br>
+        <input type="text" name="email" id="email">
+    </div>
+    <br>
+
+    <div>
+        <label>password:</label> <br>
+        <input type="password" name="password" id="password">
+    </div>
+    <br>
+
+    <div>
+        <label>confirm password:</label> <br>
+        <input type="password" name="confirm_password" id="confirm_password">
+    </div>
+    <br>
+
+    <button class="btn btn-success" type="submit">submit</button>
+    <!-- <a class="btn btn-primary" href="/" role="button">home</a> -->
+</form>
+</div>
+
+<div class="login">
+    <form action="/login" method="post">
+        {% with messages = get_flashed_messages(category_filter=["login"]) %}<!-- declare a variable called messages -->
+        {% if messages %}<!-- check if there are any messages -->
+            {% for message in messages %}<!-- loop through the messages -->
+                    <p>{{message}}</p><!-- display each message in a paragraph tag -->
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h2>login</h2>
+
+    <div>
+        <label>email:</label> <br>
+        <input type="text" name="email" id="email">
+    </div>
+    <br>
+
+    <div>
+        <label>password:</label> <br>
+        <input type="password" name="password" id="password">
+    </div> <br>
+    <button class="btn btn-success" type="submit">submit</button>
+</form>
+</div>
+</div>
+
+</body>
+</html>

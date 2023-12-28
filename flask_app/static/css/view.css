@@ -1,0 +1,24 @@
+.main{
+    border: 2px black solid;
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.second{
+    margin-left: 5%;
+}
+
+.nav{
+margin-top:25px ;
+margin-left: 45%;
+gap: 15px;
+}
+
+.btn-nav{
+    display: flex;
+}
+.purchase-btn{
+margin-left: 45%;
+margin-bottom: 15px;
+}

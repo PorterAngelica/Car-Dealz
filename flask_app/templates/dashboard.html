@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/dashboard.css') }}">
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav-right">
+            <h4 class="user">Welcome to Car Dealz, {{ user.first_name }}!!</h4>
+            <a class="btn btn-primary" href="/" role="button">logout</a>
+        </div>
+
+        <div class="nav-bottom">
+            <h2 class="title">Cars For sale</h2>
+        </div> <br>
+
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Seller</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for cars in car: %}
+                <tr>
+                    <td>{{ cars.model }}</td>
+                    <td>{{ cars.year }}</td>
+                    <td>{{ cars.user[0].first_name }} {{ cars.user[0].last_name }}</td>
+
+                    <td>
+                        {% if cars.user[0].id != user.id: %}
+                        <a href="/cars/{{cars.id}}">view</a>
+                        {% endif %}
+
+                        {% if cars.user[0].id == user.id: %}
+                        <a href="/car/delete/{{cars.id}}">delete</a>
+                        <a href="/car/edit/{{cars.id}}">edit</a>
+                    </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="btn">
+            <a class="btn btn-primary" href="/new" role="button">add car</a>
+        </div>
+
+
+
+
+
+    </div>
+</body>
+
+</html>

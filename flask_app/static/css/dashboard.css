@@ -1,0 +1,38 @@
+/* *{
+    border: 1px red dotted;
+} */
+
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    /* border: 1px red solid; */
+}
+
+.nav-right a {
+    margin-left: 35%;
+    margin-top: 25px;
+}
+
+.nav-right h2 {
+    margin-left: 5%;
+}
+
+.nav-bottom{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.a {
+    margin-left: 40%;
+}
+
+.nav-bottom p{
+    margin-left: 5%;
+}
+
+.btn{
+    margin-left: 70%;
+    width: 130px;
+}

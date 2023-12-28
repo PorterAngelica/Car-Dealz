@@ -1,0 +1,13 @@
+.main{
+    display: flex;
+    gap: 200px;
+    margin: 50px;
+    margin-left: 300px;
+    width: 60%;
+    /* border: 2px red dotted;  */
+}
+
+h4{
+    margin-top: 50px;
+    margin-left:15%;
+}
